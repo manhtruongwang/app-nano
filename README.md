@@ -44,35 +44,27 @@ sudo docker run --rm -ti  -v "$(realpath .):/app" --privileged -v "/dev/bus/usb:
 
 ### Install it to Ledger and with accept prompt on Ledger
 
-For Banano on Ledger S:
+For Banano:
+Change COIN=banano in Makefile
+
+For Nano:
+Change COIN=nano in Makefile
+
+For Ledger S:
 ```
-COIN=banano BOLOS_SDK=$NANOS_SDK make load
-```
-For Nano on Ledger S: 
-```
-COIN=nano BOLOS_SDK=$NANOS_SDK make load
+BOLOS_SDK=$NANOS_SDK make load
 ```
 ***
 
-For Banano on Ledger S+: 
+For Ledger S+: 
 ```
-COIN=banano BOLOS_SDK=$NANOSP_SDK make load
-```
-
-For Nano on Ledger S+:
-```
-COIN=nano BOLOS_SDK=$NANOSP_SDK make load
+BOLOS_SDK=$NANOSP_SDK make load
 ```
 
 ***
-For Banano on Ledger X: 
+For Ledger X: 
 ```
-COIN=banano BOLOS_SDK=$NANOX_SDK make load
-```
-
-For Nano on Ledger X:
-```
-COIN=nano BOLOS_SDK=$NANOX_SDK make load
+BOLOS_SDK=$NANOX_SDK make load
 ```
 
 ***
