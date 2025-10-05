@@ -30,7 +30,7 @@ endif
 
 # Default to library app
 ifndef COIN
-COIN=banano
+COIN=nano
 endif
 
 APP_LOAD_PARAMS = --curve ed25519 $(COMMON_LOAD_PARAMS)

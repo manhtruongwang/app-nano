@@ -3,12 +3,14 @@
 #### Remember, this is an temporary fix, this will skip the block confirmation screen and sign whatever is sent to the Ledger so double check your input. I will not take responsibily for any problem that this modifications may caused.
 
 ## Prepare:
+
 - Ubuntu VM with USB Passthrough (Mac with Parallels,...) or an Ubuntu Host
 - Ledger Device (S, S+, X,...)
 
 ## Step 1 - Install Docker
 
 ### Add Docker's official GPG key:
+
 ```
 sudo apt-get update
 sudo apt-get install ca-certificates curl
@@ -18,6 +20,7 @@ sudo chmod a+r /etc/apt/keyrings/docker.asc
 ```
 
 ### Add the repository to Apt sources:
+
 ```
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
@@ -27,17 +30,20 @@ sudo apt-get update
 ```
 
 ### Install Docker
+
 ```
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
 ## Step 2 - Install the app
+
 ```
 git clone https://github.com/manhtruongwang/app-nano
 cd app-nano
 ```
 
 ### Plug your Ledger to PC, enter PIN and stay on app select screen
+
 ```
 sudo docker run --rm -ti  -v "$(realpath .):/app" --privileged -v "/dev/bus/usb:/dev/bus/usb" ghcr.io/ledgerhq/ledger-app-builder/ledger-app-builder:latest
 ```
@@ -51,22 +57,27 @@ For Nano:
 Change COIN=nano in Makefile
 
 For Ledger S:
+
 ```
 BOLOS_SDK=$NANOS_SDK make load
 ```
-***
 
-For Ledger S+: 
+---
+
+For Ledger S+:
+
 ```
 BOLOS_SDK=$NANOSP_SDK make load
 ```
 
-***
-For Ledger X: 
+---
+
+For Ledger X:
+
 ```
 BOLOS_SDK=$NANOX_SDK make load
 ```
 
-***
-### You can now use Ledger device with Nault for Nano/TheBananoStand for Banano
+---
 
+### You can now use Ledger device with Nault for Nano/TheBananoStand for Banano, remember to enable auto-receive for this fix to work!
