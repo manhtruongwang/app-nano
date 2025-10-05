@@ -80,4 +80,10 @@ BOLOS_SDK=$NANOX_SDK make load
 
 ---
 
-### You can now use Ledger device with Nault for Nano/TheBananoStand for Banano, remember to enable auto-receive for this fix to work!
+### Step 3 - Enable auto-receive
+
+Open Nano/Banano app on Ledger, enable auto-receive, all blocks that's sent to Ledger will be auto-signed
+
+---
+
+### You can now use Ledger device with Nault for Nano/TheBananoStand for Banano!
